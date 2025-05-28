@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ToDo App</title>
+</head>
+<body>
+  <h1>ToDo App</h1>
+  <form id="todoForm">
+    <input type="text" id="todoInput" />
+    <button type="submit">Agregar</button>
+  </form>
+  <ul id="todoList"></ul>
+
+  <script>
+    const form = document.getElementById('todoForm');
+    const input = document.getElementById('todoInput');
+    const list = document.getElementById('todoList');
+
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      await fetch('/api/todos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: input.value })
+      });
+      input.value = '';
+      loadTodos();
+    };
+
+    async function loadTodos() {
+      const res = await fetch('/api/todos');
+      const todos = await res.json();
+      list.innerHTML = '';
+      todos.forEach(todo => {
+        const li = document.createElement('li');
+        li.textContent = todo.text;
+        list.appendChild(li);
+      });
+    }
+
+    loadTodos();
+  </script>
+</body>
+</html>
