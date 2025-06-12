@@ -23,7 +23,7 @@ jobs:
       - name: Run tests
         run: |
           cd backend
-          npm test
+          npx jest --detectOpenHandles
 
       - name: Build Docker image
         run: docker build -t todo-backend ./backend
