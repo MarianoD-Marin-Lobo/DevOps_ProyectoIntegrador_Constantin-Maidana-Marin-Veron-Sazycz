@@ -49,20 +49,9 @@ jobs:
         run: npm install
         working-directory: ./backend
 
-      # --- Pasos de Depuración ---
-      - name: Debug - Verify current directory
-        run: pwd
+      - name: Set execute permissions for Jest
+        run: chmod +x node_modules/.bin/jest
         working-directory: ./backend
-
-      - name: Debug - List contents of node_modules/.bin
-        run: ls -la node_modules/.bin/
-        working-directory: ./backend
-
-      - name: Debug - Verify Jest executable permissions
-        run: ls -la node_modules/.bin/jest
-        working-directory: ./backend 
-
-      # --- Fin de Pasos de Depuración ---
 
       - name: Run tests
         run: npm test
