@@ -19,7 +19,7 @@
 
     form.onsubmit = async (e) => {
       e.preventDefault();
-      await fetch('/api/todos', {
+      await fetch('http://localhost:3000/api/todos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input.value })
@@ -29,7 +29,7 @@
     };
 
     async function loadTodos() {
-      const res = await fetch('/api/todos');
+      const res = await fetch('http://localhost:3000/api/todos');
       const todos = await res.json();
       list.innerHTML = '';
       todos.forEach(todo => {
