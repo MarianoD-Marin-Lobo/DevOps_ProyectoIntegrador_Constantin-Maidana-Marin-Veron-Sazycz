@@ -11,7 +11,7 @@
 // backend/src/app.js
 const express = require('express');
 const mongoose = require('mongoose'); // Lo necesitas para definir esquemas/modelos, pero no para conectar aquí
-const todoRoutes = require('../routes/todo'); // Asumo que tus rutas están en backend/routes/todo.js
+//const todoRoutes = require('../routes/todo'); // Asumo que tus rutas están en backend/routes/todo.js
 
 const app = express();
 
