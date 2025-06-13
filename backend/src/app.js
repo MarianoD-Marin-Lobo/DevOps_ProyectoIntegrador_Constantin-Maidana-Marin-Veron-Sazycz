@@ -1,7 +1,5 @@
-// backend/src/app.js
 const express = require('express');
-// const mongoose = require('mongoose'); // No necesario aquí para la app instance
-const todoRoutes = require('./routes/todos'); // <-- ¡Asegúrate de que esta línea esté presente y correcta!
+const todoRoutes = require('./routes/todos');
 
 const app = express();
 
