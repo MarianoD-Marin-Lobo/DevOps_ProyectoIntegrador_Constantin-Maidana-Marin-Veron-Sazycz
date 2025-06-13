@@ -54,7 +54,7 @@ beforeAll(async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-});
+}, 60 * 1000);
 
 // Antes de cada prueba (opcional, pero buena práctica para limpiar datos)
 beforeEach(async () => {
@@ -84,4 +84,4 @@ describe('Todo API', () => {
   });
 
   // ... tus otras pruebas
-});
+}, 10 * 1000);
