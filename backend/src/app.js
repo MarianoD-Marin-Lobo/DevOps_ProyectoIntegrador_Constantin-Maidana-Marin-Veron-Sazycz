@@ -1,17 +1,11 @@
+// backend/src/app.js
 const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const routes = require('./routes/todos');
+// const mongoose = require('mongoose'); // No necesario aquí para la app instance
+const todoRoutes = require('./routes/todos'); // <-- ¡Asegúrate de que esta línea esté presente y correcta!
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
-app.use('/api/todos', routes);
-
-mongoose.connect('mongodb://mongo:27017/tododb', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+app.use('/api/todos', todoRoutes); // Tus rutas de la API
 
 module.exports = app;
