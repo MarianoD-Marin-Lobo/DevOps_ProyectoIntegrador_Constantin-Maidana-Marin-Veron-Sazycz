@@ -1,16 +1,22 @@
+version: '3.8'
+
 services:
+  mongo:
+    image: mongo:7.0 
+    ports:
+      - "27017:27017" 
+    volumes:
+      - mongodb_data:/data/db 
+
   backend:
-    build: ./backend
+    build: ./backend 
     ports:
       - "3000:3000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/tododb #
+      NODE_ENV: docker
     depends_on:
-      - mongo
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
+      - mongo 
 
 volumes:
-  mongo-data:
+  mongodb_data:
