@@ -51,7 +51,6 @@ Ubicado en `.github/workflows/ci-cd.yml`, el pipeline realiza:
 - Instalación de dependencias.
 - Ejecución de pruebas con Jest.
 - Build de la imagen Docker.
-- (Opcional: Push de imagen a Docker Hub y despliegue a entorno cloud).
 
 
 
