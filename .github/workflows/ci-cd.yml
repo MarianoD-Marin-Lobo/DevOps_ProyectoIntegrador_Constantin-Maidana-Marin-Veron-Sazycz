@@ -1,33 +1,3 @@
-# name: CI/CD
-
-# on:
-#   push:
-#     branches: [main]
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 18
-
-#       - name: Install dependencies
-#         run: |
-#           cd backend
-#           npm install
-
-#       - name: Run tests
-#         run: |
-#           cd backend
-#           npx jest --detectOpenHandles
-
-#       - name: Build Docker image
-#         run: docker build -t todo-backend ./backend
-
 name: CI/CD
 
 on:
